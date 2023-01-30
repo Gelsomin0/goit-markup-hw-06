@@ -412,8 +412,12 @@ body {
 
 .footer-section {
     display: flex;
-    gap: 120px;
     align-items: flex-start;
+}
+
+.social-link-footer-section {
+    margin-left: 120px;
+    margin-right: 80px;
 }
 
 .footer {
@@ -476,6 +480,76 @@ body {
     background-color: var(--green);
 }
 
+
+
+
+.footer-form {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.footer-input-email {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.15));
+    background-color: transparent;
+    padding: 8px 16px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.04em;
+    color: #fff;
+    width: 264px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-input-email::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-input-email:focus {
+    outline: none;
+    border-color: var(--ocean);
+}
+
+.footer-button-suscribe {
+    padding: 8px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #fff;
+    background-color: var(--iris);
+    border-radius: 4px;
+    border: none;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-button-suscribe:is(:hover, :focus) {
+    background-color: var(--ocean);
+}
+
+.footer-send-icon {
+    width: 24px;
+    height: 20px;
+    fill: #fff;
+}
 
 /* ========================== PORTFOLIO PAGE ========================== */
 
