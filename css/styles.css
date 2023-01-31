@@ -44,6 +44,19 @@ button {
     cursor: pointer;
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
 .list {
     list-style: none;
 }
@@ -713,7 +726,7 @@ body {
                 border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.close-button:hover {
+.close-button:is(:hover, :focus) {
     background-color: var(--ocean);
     border-color: var(--ocean);
 }
@@ -724,7 +737,7 @@ body {
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.close-button:hover .close-button-icon {
+.close-button:is(:hover, :focus) .close-button-icon {
     fill: #fff;
 }
 
@@ -860,6 +873,7 @@ body {
     line-height: 1.33;
     letter-spacing: 0.04em;
     color: #757575;
+    margin-left: calc(8px + 16px);
 }
 
 .modal-form-policy-link {
@@ -874,8 +888,25 @@ body {
 .modal-form-policy-label {
     margin-bottom: 24px;
     display: flex;
-    gap: 8px;
     align-items: center;
+    position: relative;
+}
+
+.modal-form-policy::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/checkbox-default.svg');
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    transition: background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.real-checkbox:checked + .modal-form-policy::before {
+    background-image: url('../images/checkbox-click.svg');
 }
 
 .modal-form-submit-button {
@@ -893,4 +924,9 @@ body {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px; 
     background-color: var(--iris);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-submit-button:is(:hover, :focus) {
+    background-color: var(--ocean);
 }
