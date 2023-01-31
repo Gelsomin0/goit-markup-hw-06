@@ -783,6 +783,7 @@ body {
 .modal-form-label-span {
     display: block;
     position: relative;
+    margin-bottom: 8px;
 }
 
 .modal-input-form-icon-name {
